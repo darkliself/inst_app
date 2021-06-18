@@ -1,17 +1,12 @@
-import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.ss.usermodel.WorkbookFactory
-import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.brunocvcunha.instagram4j.Instagram4j
 import org.brunocvcunha.instagram4j.requests.InstagramGetUserFollowersRequest
 import org.brunocvcunha.instagram4j.requests.InstagramGetUserFollowingRequest
 import org.brunocvcunha.instagram4j.requests.InstagramSearchUsernameRequest
 import java.io.File
-
 import java.io.FileInputStream
 import java.io.FileOutputStream
-import java.util.*
-
 
 val USER_ACCESS_TOKEN = ""
 
