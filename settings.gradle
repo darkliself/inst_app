@@ -1,3 +1,3 @@
-
-rootProject.name = 'NewTest2Insta'
+include ':app'
+rootProject.name = 'inst_app'
 
