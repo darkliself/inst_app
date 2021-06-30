@@ -12,7 +12,7 @@ val USER_ACCESS_TOKEN = ""
 
 
 fun main(args: Array<String>) {
-    val instagram: Instagram4j = Instagram4j.builder().username("facetofacelol").password("23051986ee").build()
+    val instagram: Instagram4j = Instagram4j.builder().username("enteryourlogin").password("enteryourpass").build()
     instagram.setup()
     instagram.login()
     val myPK = "5534295711"
