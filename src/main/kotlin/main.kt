@@ -10,13 +10,11 @@ import java.io.FileOutputStream
 
 val USER_ACCESS_TOKEN = ""
 
-
 fun main(args: Array<String>) {
-    val instagram: Instagram4j = Instagram4j.builder().username("enteryourlogin").password("enteryourpass").build()
+    val instagram: Instagram4j = Instagram4j.builder().username("xxxxxxxx").password("xxxxxxxxx").build()
     instagram.setup()
     instagram.login()
     val myPK = "5534295711"
-
 
     // получение информации о польователе
     val usernameResult = instagram.sendRequest(InstagramSearchUsernameRequest("facetofacelol"))
@@ -35,18 +33,16 @@ fun main(args: Array<String>) {
         InstagramGetUserFollowersRequest(usernameResult.user.getPk())
     )
     for (user in followersResult.getUsers()) {
-        //println(user.username + " " + user.getPk())
         listOfFollowers.add(listOf(user.getPk().toString(), user.username, user.full_name))
     }
     val followingResult = instagram.sendRequest(
         InstagramGetUserFollowingRequest(usernameResult.user.getPk())
     )
     for (user in followingResult.getUsers()) {
-        //println(user.username + " " + user.getPk())
         listOfFollowing.add(listOf(user.getPk().toString(), user.username, user.full_name))
     }
     if (File("./Followers.xlsx").isFile) {
-        previousFollowers = readFromExcelFile("./Followers.xlsx")?.count() ?: 0
+        previousFollowers = readFromExcelFile("./Followers.xlsx")?.count()
 
     } else {
         writeToFile("./Followers.xlsx", createSheet(listOfFollowers))
@@ -84,18 +80,14 @@ fun createSheet(rowsToWrite: MutableList<List<String>>): XSSFWorkbook {
 fun readFromExcelFile(filepath: String): MutableList<List<String>> {
     val listOfValues = mutableListOf<List<String>>()
     val inputStream = FileInputStream(filepath)
-    //Instantiate Excel workbook using existing file:
+    // Instantiate Excel workbook using existing file:
     val xlWb = WorkbookFactory.create(inputStream)
     val xlWs = xlWb.getSheetAt(0)
 
-    xlWs.forEach {
-        //println(it)
-    }
     println(xlWs.count())
     xlWs.forEach { row ->
         listOfValues.add(listOf(row.getCell(0).stringCellValue, row.getCell(1).stringCellValue, row.getCell(2).stringCellValue))
     }
-    //print(xlWs.getRow(0))
     return listOfValues
 }
 
