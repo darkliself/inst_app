@@ -11,13 +11,13 @@ import java.io.FileOutputStream
 val USER_ACCESS_TOKEN = ""
 
 fun main(args: Array<String>) {
-    val instagram: Instagram4j = Instagram4j.builder().username("xxxxxxxx").password("xxxxxxxxx").build()
+    val instagram: Instagram4j = Instagram4j.builder().username("").password("").build()
     instagram.setup()
     instagram.login()
     val myPK = "5534295711"
 
     // получение информации о польователе
-    val usernameResult = instagram.sendRequest(InstagramSearchUsernameRequest("facetofacelol"))
+    val usernameResult = instagram.sendRequest(InstagramSearchUsernameRequest(""))
     var actualFollowers: Int = usernameResult.user.getFollower_count()
     var previousFollowers: Int = 0
     var backSheet = mutableListOf<List<String>>()
