@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     val myPK = "5534295711"
 
     // получение информации о польователе
-    val usernameResult = instagram.sendRequest(InstagramSearchUsernameRequest(""))
+    val usernameResult = instagram.sendRequest(InstagramSearchUsernameRequest("facetofacelol"))
     var actualFollowers: Int = usernameResult.user.getFollower_count()
     var previousFollowers: Int = 0
     var backSheet = mutableListOf<List<String>>()
