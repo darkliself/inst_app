@@ -15,9 +15,10 @@ fun main(args: Array<String>) {
     instagram.setup()
     instagram.login()
     val myPK = "5534295711"
+    println("fdsfdsf")
 
     // получение информации о польователе
-    val usernameResult = instagram.sendRequest(InstagramSearchUsernameRequest("facetofacelol"))
+    val usernameResult = instagram.sendRequest(InstagramSearchUsernameRequest("yourUserName"))
     var actualFollowers: Int = usernameResult.user.getFollower_count()
     var previousFollowers: Int = 0
     var backSheet = mutableListOf<List<String>>()
